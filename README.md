@@ -1,6 +1,6 @@
 # Web Scraper Dashboard
 
-A React-based dashboard that lets authenticated users enter a URL, trigger a Puppeteer‐based scraping job on a remote backend (hosted on Render), and view the scraped data in a table. Firebase is used for user authentication, hosting, and storing user‐specific scrap history.
+A React‐based dashboard that lets authenticated users enter a URL, trigger a Puppeteer-based scraping job on a remote backend (hosted on Render), and view the scraped data in a table. Firebase handles user authentication, hosting, and storing user‐specific scrape history.
 
 ---
 
@@ -20,10 +20,11 @@ A React-based dashboard that lets authenticated users enter a URL, trigger a Pup
    1. [Frontend (Firebase Hosting)](#frontend-firebase-hosting)  
    2. [Backend (Render)](#backend-render)  
 7. [Usage](#usage)  
-   1. [Sign Up / Sign In](#sign-up--sign-in)  
-   2. [Enter URL & Scrape](#enter-url--scrape)  
-   3. [View Results](#view-results)  
-   4. [Logout](#logout)  
+   1. [Sign Up / Sign In Flow](#sign-up--sign-in-flow)  
+   2. [Dashboard Layout](#dashboard-layout)  
+   3. [Enter URL & Scrape](#enter-url--scrape)  
+   4. [View Results](#view-results)  
+   5. [Logout](#logout)  
 8. [Database Structure](#database-structure)  
 9. [Folder Structure](#folder-structure)  
 10. [Troubleshooting](#troubleshooting)  
@@ -34,7 +35,7 @@ A React-based dashboard that lets authenticated users enter a URL, trigger a Pup
 
 ## 📖 Project Overview
 
-The **Web Scraper Dashboard** is a full‐stack application where authenticated users can submit any URL to a remote Puppeteer endpoint. The endpoint (hosted on Render) navigates to the URL, scrapes data (e.g., book listings), and returns structured JSON. The React frontend receives that JSON and displays it in an interactive table. Firebase handles user authentication, hosting, and Firestore to store individual user’s scrap history.
+The **Web Scraper Dashboard** is a full-stack application where authenticated users can submit any URL to a remote Puppeteer endpoint. The endpoint (hosted on Render) navigates to the URL, scrapes data (e.g., book listings), and returns structured JSON. The React frontend renders this JSON into a table. Firebase is used for user authentication, hosting, and Firestore to store each user’s scrape history.
 
 ---
 
@@ -42,19 +43,16 @@ The **Web Scraper Dashboard** is a full‐stack application where authenticated 
 
 - **Frontend**  
   - React (Create React App)  
-  - React Router (for routing between Sign-In, Sign-Up, and Dashboard)  
-  - Axios or Fetch API (for HTTP requests to both Firebase Auth and the scraping backend)  
-  - Material-UI or plain CSS (for styling forms and tables)
+  - Firebase Authentication (Email/Password)  
+  - Firebase Hosting  
+  - Firestore (storing scrape history)  
+  - Fetch API (for HTTP requests to the scraping backend)  
+  - Plain CSS for layout
 
 - **Backend (Scraper)**  
   - Node.js + Express  
   - Puppeteer (headless Chrome)  
   - Hosted on Render.com (free tier)
-
-- **Authentication & Hosting**  
-  - Firebase Authentication (Email/Password)  
-  - Firebase Hosting (serves the React build)  
-  - Firestore (stores scrap history per user)
 
 ---
 
@@ -62,23 +60,19 @@ The **Web Scraper Dashboard** is a full‐stack application where authenticated 
 
 1. **User Authentication**  
    - Sign Up with email & password  
-   - Sign In / Sign Out  
-   - Protected routes (Dashboard only accessible when signed in)
-
+   - Sign In (if already signed up)  
+   - Conditional rendering of Sign-Up/Sign-In forms versus Dashboard  
 2. **Scraping Workflow**  
-   - Authenticated users can enter any URL  
+   - Authenticated users see a text-input for any URL plus a “Scrape Now” button  
    - Clicking “Scrape Now” sends a POST to the remote Puppeteer endpoint (`/scrape`)  
-   - Backend returns an array of book data (title, price, stock, rating, etc.)  
-   - Frontend renders a sortable/filterable table of scraped results
-
-3. **History & Persistence**  
-   - Each scrape request (timestamp + target URL) is saved in Firestore under the user’s document  
-   - Users can revisit their history (optional: implement a “View History” page)
-
-4. **Responsive UI**  
-   - Simple Sign-Up / Sign-In forms  
-   - Dashboard with URL input, “Scrape Now” button, and Logout  
-   - Table displays scraped data in a clean, responsive layout
+   - Backend returns an array of scraped items (title, price, stock status, rating, etc.)  
+   - Frontend displays results in a table  
+3. **Firestore History (Optional Extension)**  
+   - After each scrape, you can save `{ userId, url, timestamp, resultsCount }` into Firestore under the user’s document  
+   - Build a “History” view later to list past scrapes  
+4. **Responsive Layout**  
+   - Sign-Up and Sign-In appear side by side when no user is logged in  
+   - Once signed in, the main Dashboard shows a left-hand menu, center-pane scrape UI, and right-hand user info + logout
 
 ---
 
