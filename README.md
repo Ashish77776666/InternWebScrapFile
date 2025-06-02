@@ -56,6 +56,6 @@ The **Web Scraper Dashboard** is a full-stack application where authenticated us
 ## 🌐 Live Demo
 
 👉 [https://internwebscraper.web.app](https://internwebscraper.web.app)
-   demo email:https://github.com/Ashish77776666/internWebScraper
-        password: Punjab@7
+   - email: test2@gmail.com
+   - password: Punjab@7
   or you can create your own userid and password
