@@ -52,3 +52,7 @@ The **Web Scraper Dashboard** is a full-stack application where authenticated us
 3. **Firebase CLI**  
    ```bash
    npm install -g firebase-tools
+
+## 🌐 Live Demo
+
+👉 [https://internwebscraper.web.app](https://internwebscraper.web.app)
