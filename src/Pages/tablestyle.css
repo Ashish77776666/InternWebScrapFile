@@ -1,0 +1,85 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Arial, Helvetica, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+}
+
+*{
+  margin: 10;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.container {
+  overflow: auto;
+  height: 100vh;
+}
+
+table {
+  width: 60rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.204);
+  border-radius: 10px;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+th{
+  padding: 1rem;
+  background-color: black;
+  color: white;
+  text-align: left;
+}
+
+th:first-of-type{
+  border-top-left-radius: 10px;
+}
+th:last-of-type{
+  border-top-right-radius: 10px;
+}
+
+tr:hover{
+  background-color: rgb(232,232,232,0.638);
+}
+
+td{
+  padding: 0.5rem;
+}
+
+h1{
+  text-align: center;
+}
+
+#pageoutof{
+  text-align: center;
+}
+
+#pagenumber{
+  text-align: center;
+}
+
+#mainbutton{
+  display: flex;
+  justify-content: center; 
+  width: 100%;
+  gap: 200px;
+}
+#leftbutton{
+  /* background: lightblue;  */
+  padding: 10px;
+  /* text-align: center;  */
+  /* position: relative; */
+  /* left: 300px;  */
+}
+#rightbutton{
+  /* background: lightgreen;  */
+  padding: 10px;
+  /* text-align: right;  */
+  /* position: relative; */
+  /* left: 550px; */
+  /* top: -55px; */
+}
+
+#urlpage{
+  text-align: center;
+}
