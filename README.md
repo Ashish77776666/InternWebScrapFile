@@ -58,4 +58,4 @@ The **Web Scraper Dashboard** is a full-stack application where authenticated us
 👉 [https://internwebscraper.web.app](https://internwebscraper.web.app)
    - email: test2@gmail.com
    - password: Punjab@7
-  or you can create your own userid and password
+   - or you can create your own userid and password
