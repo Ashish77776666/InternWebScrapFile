@@ -2,37 +2,6 @@
 
 A React‐based dashboard that lets authenticated users enter a URL, trigger a Puppeteer-based scraping job on a remote backend (hosted on Render), and view the scraped data in a table. Firebase handles user authentication, hosting, and storing user‐specific scrape history.
 
----
-
-## 📝 Table of Contents
-
-1. [Project Overview](#project-overview)  
-2. [Tech Stack](#tech-stack)  
-3. [Features](#features)  
-4. [Prerequisites](#prerequisites)  
-5. [Getting Started](#getting-started)  
-   1. [Clone the Repository](#clone-the-repository)  
-   2. [Install Dependencies](#install-dependencies)  
-   3. [Firebase Setup](#firebase-setup)  
-   4. [Environment Variables](#environment-variables)  
-   5. [Running Locally](#running-locally)  
-6. [Deployment](#deployment)  
-   1. [Frontend (Firebase Hosting)](#frontend-firebase-hosting)  
-   2. [Backend (Render)](#backend-render)  
-7. [Usage](#usage)  
-   1. [Sign Up / Sign In Flow](#sign-up--sign-in-flow)  
-   2. [Dashboard Layout](#dashboard-layout)  
-   3. [Enter URL & Scrape](#enter-url--scrape)  
-   4. [View Results](#view-results)  
-   5. [Logout](#logout)  
-8. [Database Structure](#database-structure)  
-9. [Folder Structure](#folder-structure)  
-10. [Troubleshooting](#troubleshooting)  
-11. [Future Improvements](#future-improvements)  
-12. [License](#license)  
-
----
-
 ## 📖 Project Overview
 
 The **Web Scraper Dashboard** is a full-stack application where authenticated users can submit any URL to a remote Puppeteer endpoint. The endpoint (hosted on Render) navigates to the URL, scrapes data (e.g., book listings), and returns structured JSON. The React frontend renders this JSON into a table. Firebase is used for user authentication, hosting, and Firestore to store each user’s scrape history.
