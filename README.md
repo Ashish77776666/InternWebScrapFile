@@ -2,6 +2,13 @@
 
 A React‐based dashboard that lets authenticated users enter a URL, trigger a Puppeteer-based scraping job on a remote backend (hosted on Render), and view the scraped data in a table. Firebase handles user authentication, hosting, and storing user‐specific scrape history.
 
+## 🌐 Live Demo
+
+👉 [https://internwebscraper.web.app](https://internwebscraper.web.app)
+   - email: test2@gmail.com
+   - password: Punjab@7
+   - or you can create your own userid and password
+     
 ## 📖 Project Overview
 
 The **Web Scraper Dashboard** is a full-stack application where authenticated users can submit any URL to a remote Puppeteer endpoint. The endpoint (hosted on Render) navigates to the URL, scrapes data (e.g., book listings), and returns structured JSON. The React frontend renders this JSON into a table. Firebase is used for user authentication, hosting, and Firestore to store each user’s scrape history.
@@ -55,9 +62,3 @@ The **Web Scraper Dashboard** is a full-stack application where authenticated us
    ```bash
    npm install -g firebase-tools
 
-## 🌐 Live Demo
-
-👉 [https://internwebscraper.web.app](https://internwebscraper.web.app)
-   - email: test2@gmail.com
-   - password: Punjab@7
-   - or you can create your own userid and password
